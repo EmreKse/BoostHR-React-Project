@@ -64,11 +64,11 @@
     "prettier/prettier": [
       2,
       {
-        "printWidth": 100,
+        "printWidth": 150,
         "singleQuote": true,
         "trailingComma": "none",
         "tabWidth": 2,
-        "endOfLine": "auto"
+        "endOfLine":"auto"
       }
     ]
   }

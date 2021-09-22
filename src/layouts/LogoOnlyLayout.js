@@ -1,6 +1,7 @@
 import { Link as RouterLink, Outlet } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
+import { Button, Box } from '@mui/material';
 // components
 import Logo from '../components/Logo';
 
@@ -24,9 +25,11 @@ export default function LogoOnlyLayout() {
   return (
     <>
       <HeaderStyle>
-        <RouterLink to="/">
-          <Logo />
-        </RouterLink>
+        <Box component={RouterLink} to="/" sx={{ display: 'inline-flex', textDecoration: 'none' }}>
+          <Button sx={{ backgrundColor: 'white' }} fullWidth variant="outlined">
+            Home
+          </Button>
+        </Box>
       </HeaderStyle>
       <Outlet />
     </>

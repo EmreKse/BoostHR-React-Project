@@ -49,8 +49,8 @@ export default function Register() {
       </AuthLayout>
 
       <MHidden width="mdDown">
-        <SectionStyle sx={{ backgroundColor: '#007B55' }}>
-          <Typography variant="h4" sx={{ px: 5, mt: 10, mb: 5, color: 'white' }}>
+        <SectionStyle sx={{ backgroundColor: '#CFD8DC' }}>
+          <Typography variant="h4" sx={{ px: 5, mt: 0, mb: 5, color: '#1B5E20' }}>
             Şirketinizi daha kolay yönetin. Hem de tek bir yazılımla!
           </Typography>
           <SectionStyle sx={{ margin: 1, maxWidth: 448 }}>
@@ -65,9 +65,7 @@ export default function Register() {
             <Typography variant="h4" gutterBottom>
               Ücretsiz deneyin.
             </Typography>
-            <Typography sx={{ color: 'text.secondary' }}>
-              30 gün ücretsiz deneyin. Kredi kartı bilgilerinizi istemiyoruz.
-            </Typography>
+            <Typography sx={{ color: 'text.secondary' }}>30 gün ücretsiz deneyin. Kredi kartı bilgilerinizi istemiyoruz.</Typography>
           </Box>
 
           <RegisterForm />

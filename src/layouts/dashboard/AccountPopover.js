@@ -70,12 +70,7 @@ export default function AccountPopover() {
         <Avatar src={account.photoURL} alt="photoURL" />
       </IconButton>
 
-      <MenuPopover
-        open={open}
-        onClose={handleClose}
-        anchorEl={anchorRef.current}
-        sx={{ width: 220 }}
-      >
+      <MenuPopover open={open} onClose={handleClose} anchorEl={anchorRef.current} sx={{ width: 220 }}>
         <Box sx={{ my: 1.5, px: 2.5 }}>
           <Typography variant="subtitle1" noWrap>
             {account.displayName}
@@ -88,13 +83,7 @@ export default function AccountPopover() {
         <Divider sx={{ my: 1 }} />
 
         {MENU_OPTIONS.map((option) => (
-          <MenuItem
-            key={option.label}
-            to={option.linkTo}
-            component={RouterLink}
-            onClick={handleClose}
-            sx={{ typography: 'body2', py: 1, px: 2.5 }}
-          >
+          <MenuItem key={option.label} to={option.linkTo} component={RouterLink} onClick={handleClose} sx={{ typography: 'body2', py: 1, px: 2.5 }}>
             <Box
               component={Icon}
               icon={option.icon}

@@ -58,8 +58,8 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       }}
     >
       <Box sx={{ px: 4.5, py: 3 }}>
-        <Box component={RouterLink} to="/" sx={{ display: 'inline-flex' }}>
-          <Button fullWidth color="inherit" variant="outlined">
+        <Box component={RouterLink} to="/" sx={{ display: 'inline-flex', textDecoration: 'none' }}>
+          <Button fullWidth variant="outlined">
             Home
           </Button>
         </Box>

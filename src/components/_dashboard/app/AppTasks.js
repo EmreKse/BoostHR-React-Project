@@ -1,25 +1,11 @@
 import PropTypes from 'prop-types';
 import { Form, FormikProvider, useFormik } from 'formik';
 // material
-import {
-  Box,
-  Card,
-  Checkbox,
-  CardHeader,
-  Typography,
-  FormControlLabel,
-  Stack
-} from '@mui/material';
+import { Box, Card, Checkbox, CardHeader, Typography, FormControlLabel, Stack } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
-const TASKS = [
-  'Create FireStone Logo',
-  'Add SCSS and JS files if required',
-  'Stakeholder Meeting',
-  'Scoping & Estimations',
-  'Sprint Showcase'
-];
+const TASKS = ['Create FireStone Logo', 'Add SCSS and JS files if required', 'Stakeholder Meeting', 'Scoping & Estimations', 'Sprint Showcase'];
 
 // ----------------------------------------------------------------------
 
@@ -35,9 +21,7 @@ function TaskItem({ task, checked, formik, ...other }) {
   return (
     <Stack direction="row" justifyContent="space-between" sx={{ py: 0.75 }}>
       <FormControlLabel
-        control={
-          <Checkbox {...getFieldProps('checked')} value={task} checked={checked} {...other} />
-        }
+        control={<Checkbox {...getFieldProps('checked')} value={task} checked={checked} {...other} />}
         label={
           <Typography
             variant="body2"
@@ -75,12 +59,7 @@ export default function AppTasks() {
         <FormikProvider value={formik}>
           <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
             {TASKS.map((task) => (
-              <TaskItem
-                key={task}
-                task={task}
-                formik={formik}
-                checked={values.checked.includes(task)}
-              />
+              <TaskItem key={task} task={task} formik={formik} checked={values.checked.includes(task)} />
             ))}
           </Form>
         </FormikProvider>

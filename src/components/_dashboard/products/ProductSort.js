@@ -27,12 +27,7 @@ export default function ShopProductSort() {
 
   return (
     <>
-      <Button
-        color="inherit"
-        disableRipple
-        onClick={handleOpen}
-        endIcon={<Icon icon={open ? chevronUpFill : chevronDownFill} />}
-      >
+      <Button color="inherit" disableRipple onClick={handleOpen} endIcon={<Icon icon={open ? chevronUpFill : chevronDownFill} />}>
         Sort By:&nbsp;
         <Typography component="span" variant="subtitle2" sx={{ color: 'text.secondary' }}>
           Newest
@@ -47,12 +42,7 @@ export default function ShopProductSort() {
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
         {SORT_BY_OPTIONS.map((option) => (
-          <MenuItem
-            key={option.value}
-            selected={option.value === 'newest'}
-            onClick={handleClose}
-            sx={{ typography: 'body2' }}
-          >
+          <MenuItem key={option.value} selected={option.value === 'newest'} onClick={handleClose} sx={{ typography: 'body2' }}>
             {option.label}
           </MenuItem>
         ))}
