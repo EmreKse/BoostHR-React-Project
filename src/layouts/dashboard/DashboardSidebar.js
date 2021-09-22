@@ -5,7 +5,7 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import { Button, Box, Link, Drawer, Typography, Avatar } from '@mui/material';
 // components
-import homeFill from '@iconify/icons-eva/home-fill';
+// import homeFill from '@iconify/icons-eva/home-fill';
 // import Logo from '../../components/Logo';
 import Scrollbar from '../../components/Scrollbar';
 import NavSection from '../../components/NavSection';
