@@ -8,7 +8,6 @@ import AuthLayout from '../layouts/AuthLayout';
 import Page from '../components/Page';
 import { MHidden } from '../components/@material-extend';
 import { LoginForm } from '../components/authentication/login';
-import AuthSocial from '../components/authentication/AuthSocial';
 
 // ----------------------------------------------------------------------
 
@@ -43,18 +42,20 @@ export default function Login() {
   return (
     <RootStyle title="Login | Minimal-UI">
       <AuthLayout>
-        Don’t have an account? &nbsp;
+        Bir hesabınız yok mu? &nbsp;
         <Link underline="none" variant="subtitle2" component={RouterLink} to="/register">
-          Get started
+          Kayıt ol
         </Link>
       </AuthLayout>
 
       <MHidden width="mdDown">
-        <SectionStyle>
-          <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-            Hi, Welcome Back
+        <SectionStyle sx={{ backgroundColor: '#CFD8DC' }}>
+          <Typography variant="h3" sx={{ px: 5, mt: 0, mb: 5, color: '#1B5E20' }}>
+            Tekrar Hoşgeldiniz
           </Typography>
-          <img src="/static/illustrations/illustration_login.png" alt="login" />
+          <SectionStyle sx={{ margin: 1, maxWidth: 448 }}>
+            <img src="/static/illustrations/welcome.png" alt="login" />
+          </SectionStyle>
         </SectionStyle>
       </MHidden>
 
@@ -62,19 +63,18 @@ export default function Login() {
         <ContentStyle>
           <Stack sx={{ mb: 5 }}>
             <Typography variant="h4" gutterBottom>
-              Sign in to Minimal
+              Giriş Yapın
             </Typography>
-            <Typography sx={{ color: 'text.secondary' }}>Enter your details below.</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>Aşağıya bilgilerinizi girin.</Typography>
           </Stack>
-          <AuthSocial />
 
           <LoginForm />
 
           <MHidden width="smUp">
             <Typography variant="body2" align="center" sx={{ mt: 3 }}>
-              Don’t have an account?&nbsp;
-              <Link variant="subtitle2" component={RouterLink} to="register">
-                Get started
+              Bir hesabınız yok mu?&nbsp;
+              <Link variant="subtitle2" component={RouterLink} to="/register">
+                Kayıt ol
               </Link>
             </Typography>
           </MHidden>
