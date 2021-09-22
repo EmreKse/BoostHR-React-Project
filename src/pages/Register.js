@@ -48,7 +48,7 @@ export default function Register() {
         </Link>
       </AuthLayout>
 
-      <MHidden width="mdDown">
+      {/* <MHidden width="mdDown">
         <SectionStyle sx={{ backgroundColor: '#007B55' }}>
           <Typography variant="h4" sx={{ px: 5, mt: 10, mb: 5, color: 'white' }}>
             Şirketinizi daha kolay yönetin. Hem de tek bir yazılımla!
@@ -57,7 +57,7 @@ export default function Register() {
             <img alt="register" src="/static/illustrations/business.jpg" />
           </SectionStyle>
         </SectionStyle>
-      </MHidden>
+      </MHidden> */}
 
       <Container>
         <ContentStyle>
