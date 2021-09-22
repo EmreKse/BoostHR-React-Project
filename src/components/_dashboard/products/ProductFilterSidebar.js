@@ -40,16 +40,7 @@ export const FILTER_PRICE_OPTIONS = [
   { value: 'between', label: 'Between $25 - $75' },
   { value: 'above', label: 'Above $75' }
 ];
-export const FILTER_COLOR_OPTIONS = [
-  '#00AB55',
-  '#000000',
-  '#FFFFFF',
-  '#FFC0CB',
-  '#FF4842',
-  '#1890FF',
-  '#94D82D',
-  '#FFC107'
-];
+export const FILTER_COLOR_OPTIONS = ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'];
 
 // ----------------------------------------------------------------------
 
@@ -61,23 +52,12 @@ ShopFilterSidebar.propTypes = {
   formik: PropTypes.object
 };
 
-export default function ShopFilterSidebar({
-  isOpenFilter,
-  onResetFilter,
-  onOpenFilter,
-  onCloseFilter,
-  formik
-}) {
+export default function ShopFilterSidebar({ isOpenFilter, onResetFilter, onOpenFilter, onCloseFilter, formik }) {
   const { values, getFieldProps, handleChange } = formik;
 
   return (
     <>
-      <Button
-        disableRipple
-        color="inherit"
-        endIcon={<Icon icon={roundFilterList} />}
-        onClick={onOpenFilter}
-      >
+      <Button disableRipple color="inherit" endIcon={<Icon icon={roundFilterList} />} onClick={onOpenFilter}>
         Filters&nbsp;
       </Button>
 
@@ -91,12 +71,7 @@ export default function ShopFilterSidebar({
               sx: { width: 280, border: 'none', overflow: 'hidden' }
             }}
           >
-            <Stack
-              direction="row"
-              alignItems="center"
-              justifyContent="space-between"
-              sx={{ px: 1, py: 2 }}
-            >
+            <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ px: 1, py: 2 }}>
               <Typography variant="subtitle1" sx={{ ml: 1 }}>
                 Filters
               </Typography>
@@ -117,13 +92,7 @@ export default function ShopFilterSidebar({
                     {FILTER_GENDER_OPTIONS.map((item) => (
                       <FormControlLabel
                         key={item}
-                        control={
-                          <Checkbox
-                            {...getFieldProps('gender')}
-                            value={item}
-                            checked={values.gender.includes(item)}
-                          />
-                        }
+                        control={<Checkbox {...getFieldProps('gender')} value={item} checked={values.gender.includes(item)} />}
                         label={item}
                       />
                     ))}
@@ -160,12 +129,7 @@ export default function ShopFilterSidebar({
                   </Typography>
                   <RadioGroup {...getFieldProps('priceRange')}>
                     {FILTER_PRICE_OPTIONS.map((item) => (
-                      <FormControlLabel
-                        key={item.value}
-                        value={item.value}
-                        control={<Radio />}
-                        label={item.label}
-                      />
+                      <FormControlLabel key={item.value} value={item.value} control={<Radio />} label={item.label} />
                     ))}
                   </RadioGroup>
                 </div>

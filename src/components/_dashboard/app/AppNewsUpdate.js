@@ -34,12 +34,7 @@ function NewsItem({ news }) {
 
   return (
     <Stack direction="row" alignItems="center" spacing={2}>
-      <Box
-        component="img"
-        alt={title}
-        src={image}
-        sx={{ width: 48, height: 48, borderRadius: 1.5 }}
-      />
+      <Box component="img" alt={title} src={image} sx={{ width: 48, height: 48, borderRadius: 1.5 }} />
       <Box sx={{ minWidth: 240 }}>
         <Link to="#" color="inherit" underline="hover" component={RouterLink}>
           <Typography variant="subtitle2" noWrap>
@@ -73,13 +68,7 @@ export default function AppNewsUpdate() {
       <Divider />
 
       <Box sx={{ p: 2, textAlign: 'right' }}>
-        <Button
-          to="#"
-          size="small"
-          color="inherit"
-          component={RouterLink}
-          endIcon={<Icon icon={arrowIosForwardFill} />}
-        >
+        <Button to="#" size="small" color="inherit" component={RouterLink} endIcon={<Icon icon={arrowIosForwardFill} />}>
           View all
         </Button>
       </Box>

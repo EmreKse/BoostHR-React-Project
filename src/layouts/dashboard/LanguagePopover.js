@@ -59,18 +59,11 @@ export default function LanguagePopover() {
       <MenuPopover open={open} onClose={handleClose} anchorEl={anchorRef.current}>
         <Box sx={{ py: 1 }}>
           {LANGS.map((option) => (
-            <MenuItem
-              key={option.value}
-              selected={option.value === LANGS[0].value}
-              onClick={handleClose}
-              sx={{ py: 1, px: 2.5 }}
-            >
+            <MenuItem key={option.value} selected={option.value === LANGS[0].value} onClick={handleClose} sx={{ py: 1, px: 2.5 }}>
               <ListItemIcon>
                 <Box component="img" alt={option.label} src={option.icon} />
               </ListItemIcon>
-              <ListItemText primaryTypographyProps={{ variant: 'body2' }}>
-                {option.label}
-              </ListItemText>
+              <ListItemText primaryTypographyProps={{ variant: 'body2' }}>{option.label}</ListItemText>
             </MenuItem>
           ))}
         </Box>

@@ -17,16 +17,9 @@ export default function RegisterForm() {
 
   const RegisterSchema = Yup.object().shape({
     firstName: Yup.string().min(2, 'Çok kısa!').max(50, 'Çok uzun!').required('Adınız gereklidir'),
-    lastName: Yup.string()
-      .min(2, 'Çok kısa!')
-      .max(50, 'Çok uzun!')
-      .required('Soyadınız gereklidir'),
-    email: Yup.string()
-      .email('E-postanız geçerli bir formatta olmalıdır')
-      .required('E-posta gereklidir'),
-    password: Yup.string()
-      .required('Parola gereklidir')
-      .min(8, 'Parola en az 8 karakter olmalıdır'),
+    lastName: Yup.string().min(2, 'Çok kısa!').max(50, 'Çok uzun!').required('Soyadınız gereklidir'),
+    email: Yup.string().email('E-postanız geçerli bir formatta olmalıdır').required('E-posta gereklidir'),
+    password: Yup.string().required('Parola gereklidir').min(8, 'Parola en az 8 karakter olmalıdır'),
     companyName: Yup.string().required('Şirket adınız gereklidir'),
     companyPhone: Yup.number().required('Şirket telefonunuz gereklidir')
   });
@@ -115,13 +108,7 @@ export default function RegisterForm() {
             helperText={touched.companyPhone && errors.companyPhone}
           />
 
-          <LoadingButton
-            fullWidth
-            size="large"
-            type="submit"
-            variant="contained"
-            loading={isSubmitting}
-          >
+          <LoadingButton fullWidth size="large" type="submit" variant="contained" loading={isSubmitting}>
             Kayıt Ol
           </LoadingButton>
         </Stack>

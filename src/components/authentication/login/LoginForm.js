@@ -6,15 +6,7 @@ import { Icon } from '@iconify/react';
 import eyeFill from '@iconify/icons-eva/eye-fill';
 import eyeOffFill from '@iconify/icons-eva/eye-off-fill';
 // material
-import {
-  Link,
-  Stack,
-  Checkbox,
-  TextField,
-  IconButton,
-  InputAdornment,
-  FormControlLabel
-} from '@mui/material';
+import { Link, Stack, Checkbox, TextField, IconButton, InputAdornment, FormControlLabel } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
@@ -24,9 +16,7 @@ export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   const LoginSchema = Yup.object().shape({
-    email: Yup.string()
-      .email('E-postanız geçerli bir formatta olmalıdır')
-      .required('E-posta gereklidir'),
+    email: Yup.string().email('E-postanız geçerli bir formatta olmalıdır').required('E-posta gereklidir'),
     password: Yup.string().required('Parola gereklidir')
   });
 
@@ -83,23 +73,14 @@ export default function LoginForm() {
         </Stack>
 
         <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ my: 2 }}>
-          <FormControlLabel
-            control={<Checkbox {...getFieldProps('remember')} checked={values.remember} />}
-            label="Beni hatırla"
-          />
+          <FormControlLabel control={<Checkbox {...getFieldProps('remember')} checked={values.remember} />} label="Beni hatırla" />
 
           <Link component={RouterLink} variant="subtitle2" to="#">
             Şifremi unuttum
           </Link>
         </Stack>
 
-        <LoadingButton
-          fullWidth
-          size="large"
-          type="submit"
-          variant="contained"
-          loading={isSubmitting}
-        >
+        <LoadingButton fullWidth size="large" type="submit" variant="contained" loading={isSubmitting}>
           Giriş Yap
         </LoadingButton>
       </Form>
