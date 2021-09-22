@@ -65,9 +65,7 @@ export default function Register() {
             <Typography variant="h4" gutterBottom>
               Ücretsiz deneyin.
             </Typography>
-            <Typography sx={{ color: 'text.secondary' }}>
-              30 gün ücretsiz deneyin. Kredi kartı bilgilerinizi istemiyoruz.
-            </Typography>
+            <Typography sx={{ color: 'text.secondary' }}>30 gün ücretsiz deneyin. Kredi kartı bilgilerinizi istemiyoruz.</Typography>
           </Box>
 
           <RegisterForm />
