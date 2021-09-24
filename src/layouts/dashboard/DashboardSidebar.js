@@ -4,6 +4,7 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
 import { Button, Box, Link, Drawer, Typography, Avatar } from '@mui/material';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 // components
 // import homeFill from '@iconify/icons-eva/home-fill';
 // import Logo from '../../components/Logo';
@@ -59,8 +60,8 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
     >
       <Box sx={{ px: 4.5, py: 3 }}>
         <Box component={RouterLink} to="/" sx={{ display: 'inline-flex', textDecoration: 'none' }}>
-          <Button fullWidth variant="outlined">
-            Home
+          <Button fullWidth variant="outlined" startIcon={<HomeRoundedIcon />}>
+            Anasayfa
           </Button>
         </Box>
       </Box>

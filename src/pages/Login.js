@@ -40,7 +40,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 export default function Login() {
   return (
-    <RootStyle title="Login | Minimal-UI">
+    <RootStyle title="Giriş Yap">
       <AuthLayout>
         Bir hesabınız yok mu? &nbsp;
         <Link underline="none" variant="subtitle2" component={RouterLink} to="/register">

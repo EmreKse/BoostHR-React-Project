@@ -73,7 +73,10 @@ export default function LoginForm() {
         </Stack>
 
         <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ my: 2 }}>
-          <FormControlLabel control={<Checkbox {...getFieldProps('remember')} checked={values.remember} />} label="Beni hatırla" />
+          <FormControlLabel
+            control={<Checkbox {...getFieldProps('remember')} checked={values.remember} />}
+            label="Beni hatırla"
+          />
 
           <Link component={RouterLink} variant="subtitle2" to="#">
             Şifremi unuttum

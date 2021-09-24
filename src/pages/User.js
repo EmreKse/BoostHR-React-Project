@@ -127,7 +127,7 @@ export default function User() {
   const isUserNotFound = filteredUsers.length === 0;
 
   return (
-    <Page title="User | Minimal-UI">
+    <Page title="User">
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
@@ -159,7 +159,14 @@ export default function User() {
                     const isItemSelected = selected.indexOf(name) !== -1;
 
                     return (
-                      <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={isItemSelected} aria-checked={isItemSelected}>
+                      <TableRow
+                        hover
+                        key={id}
+                        tabIndex={-1}
+                        role="checkbox"
+                        selected={isItemSelected}
+                        aria-checked={isItemSelected}
+                      >
                         <TableCell padding="checkbox">
                           <Checkbox checked={isItemSelected} onChange={(event) => handleClick(event, name)} />
                         </TableCell>

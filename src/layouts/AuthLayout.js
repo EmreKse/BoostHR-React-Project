@@ -3,6 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
 import { Typography, Button, Box } from '@mui/material';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 // components
 import { MHidden } from '../components/@material-extend';
 
@@ -34,8 +35,8 @@ export default function AuthLayout({ children }) {
   return (
     <HeaderStyle>
       <Box component={RouterLink} to="/" sx={{ display: 'inline-flex', textDecoration: 'none' }}>
-        <Button sx={{ backgrundColor: 'white' }} fullWidth variant="outlined">
-          Home
+        <Button sx={{ backgrundColor: 'white' }} fullWidth variant="outlined" startIcon={<HomeRoundedIcon />}>
+          Anasayfa
         </Button>
       </Box>
 

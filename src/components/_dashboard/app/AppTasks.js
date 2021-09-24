@@ -5,7 +5,13 @@ import { Box, Card, Checkbox, CardHeader, Typography, FormControlLabel, Stack } 
 
 // ----------------------------------------------------------------------
 
-const TASKS = ['Create FireStone Logo', 'Add SCSS and JS files if required', 'Stakeholder Meeting', 'Scoping & Estimations', 'Sprint Showcase'];
+const TASKS = [
+  'Create FireStone Logo',
+  'Add SCSS and JS files if required',
+  'Stakeholder Meeting',
+  'Scoping & Estimations',
+  'Sprint Showcase'
+];
 
 // ----------------------------------------------------------------------
 

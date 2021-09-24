@@ -2,8 +2,8 @@ import { Link as RouterLink, Outlet } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
 import { Button, Box } from '@mui/material';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 // components
-import Logo from '../components/Logo';
 
 // ----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ const HeaderStyle = styled('header')(({ theme }) => ({
   width: '100%',
   position: 'absolute',
   padding: theme.spacing(3, 3, 0),
-  [theme.breakpoints.up('sm')]: {
+  [theme.breakpoints.up('md')]: {
     padding: theme.spacing(5, 5, 0)
   }
 }));
@@ -26,8 +26,8 @@ export default function LogoOnlyLayout() {
     <>
       <HeaderStyle>
         <Box component={RouterLink} to="/" sx={{ display: 'inline-flex', textDecoration: 'none' }}>
-          <Button sx={{ backgrundColor: 'white' }} fullWidth variant="outlined">
-            Home
+          <Button sx={{ backgrundColor: 'white' }} fullWidth variant="outlined" startIcon={<HomeRoundedIcon />}>
+            Anasayfa
           </Button>
         </Box>
       </HeaderStyle>

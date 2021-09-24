@@ -1,4 +1,5 @@
 import * as Yup from 'yup';
+import YupPassword from 'yup-password';
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { useFormik, Form, FormikProvider } from 'formik';
@@ -10,16 +11,21 @@ import { Stack, TextField, IconButton, InputAdornment } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
+YupPassword(Yup);
 
 export default function RegisterForm() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const RegisterSchema = Yup.object().shape({
-    firstName: Yup.string().min(2, 'Çok kısa!').max(50, 'Çok uzun!').required('Adınız gereklidir'),
-    lastName: Yup.string().min(2, 'Çok kısa!').max(50, 'Çok uzun!').required('Soyadınız gereklidir'),
+    firstName: Yup.string().min(3, 'Çok kısa!').max(50, 'Çok uzun!').required('Adınız gereklidir'),
+    lastName: Yup.string().min(3, 'Çok kısa!').max(50, 'Çok uzun!').required('Soyadınız gereklidir'),
     email: Yup.string().email('E-postanız geçerli bir formatta olmalıdır').required('E-posta gereklidir'),
-    password: Yup.string().required('Parola gereklidir').min(8, 'Parola en az 8 karakter olmalıdır'),
+    password: Yup.string()
+      .required('Parola gereklidir')
+      .min(8, 'Parola en az 8 karakter olmalıdır')
+      .minUppercase(1, 'Parolada en az bir büyük harf bulunmalıdır')
+      .minNumber(1, 'Parolada en az bir rakam bulunmalıdır'),
     companyName: Yup.string().required('Şirket adınız gereklidir'),
     companyPhone: Yup.number().required('Şirket telefonunuz gereklidir')
   });

@@ -31,7 +31,11 @@ export default function UserListHead({ order, orderBy, rowCount, headLabel, numS
           />
         </TableCell>
         {headLabel.map((headCell) => (
-          <TableCell key={headCell.id} align={headCell.alignRight ? 'right' : 'left'} sortDirection={orderBy === headCell.id ? order : false}>
+          <TableCell
+            key={headCell.id}
+            align={headCell.alignRight ? 'right' : 'left'}
+            sortDirection={orderBy === headCell.id ? order : false}
+          >
             <TableSortLabel
               hideSortIcon
               active={orderBy === headCell.id}
@@ -39,7 +43,9 @@ export default function UserListHead({ order, orderBy, rowCount, headLabel, numS
               onClick={createSortHandler(headCell.id)}
             >
               {headCell.label}
-              {orderBy === headCell.id ? <Box sx={{ ...visuallyHidden }}>{order === 'desc' ? 'sorted descending' : 'sorted ascending'}</Box> : null}
+              {orderBy === headCell.id ? (
+                <Box sx={{ ...visuallyHidden }}>{order === 'desc' ? 'sorted descending' : 'sorted ascending'}</Box>
+              ) : null}
             </TableSortLabel>
           </TableCell>
         ))}
