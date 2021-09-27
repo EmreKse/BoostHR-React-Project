@@ -6,6 +6,7 @@ import HomeLayout from './layouts/HomeLayout';
 //
 import Login from './pages/Login';
 import Register from './pages/Register';
+import ForgotPass from './pages/ForgotPass';
 import DashboardApp from './pages/DashboardApp';
 import Products from './pages/Products';
 import Blog from './pages/Blog';
@@ -18,10 +19,11 @@ import Home from './pages/Home';
 export default function Router() {
   return useRoutes([
     {
-      path: '/home',
-      element: <HomeLayout />,
+      path: '/index',
+      // element: <HomeLayout />,
       children: [
-        { path: '/home', element: <Home /> },
+        { element: <Navigate to="/index/home" replace /> },
+        { path: 'home', element: <Home /> },
         { path: '*', element: <Navigate to="/404" /> }
       ]
     },
@@ -42,8 +44,9 @@ export default function Router() {
       children: [
         { path: 'login', element: <Login /> },
         { path: 'register', element: <Register /> },
+        { path: 'forgotpass', element: <ForgotPass /> },
         { path: '404', element: <NotFound /> },
-        { path: '/', element: <Navigate to="/dashboard" /> },
+        { path: '/', element: <Navigate to="/index/home" /> },
         { path: '*', element: <Navigate to="/404" /> }
       ]
     },

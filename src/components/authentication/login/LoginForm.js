@@ -78,7 +78,7 @@ export default function LoginForm() {
             label="Beni hatırla"
           />
 
-          <Link component={RouterLink} variant="subtitle2" to="#">
+          <Link component={RouterLink} variant="subtitle2" to="/forgotpass">
             Şifremi unuttum
           </Link>
         </Stack>

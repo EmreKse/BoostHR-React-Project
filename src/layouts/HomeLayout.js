@@ -24,9 +24,6 @@ import { MHidden } from '../components/@material-extend';
 
 function HideOnScroll(props) {
   const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
   const trigger = useScrollTrigger({
     target: window ? window() : undefined
   });
@@ -55,7 +52,7 @@ export default function HomeLayout(props) {
       <HideOnScroll {...props}>
         <AppBar>
           <Container>
-            <Toolbar sx={{ py: 2, display: 'flex', justifyContent: 'space-between' }}>
+            <Toolbar sx={{ py: 3, display: 'flex', justifyContent: 'space-between' }}>
               <Typography variant="h3" component="div">
                 BRAND
               </Typography>
@@ -89,36 +86,40 @@ export default function HomeLayout(props) {
                   <MenuItem onClick={handleClose} component={RouterLink} to="/dashboard/blog">
                     Blog
                   </MenuItem>
-                  <MenuItem onClick={handleClose} component={RouterLink} to="/dashboard/product">
+                  <MenuItem onClick={handleClose} component={RouterLink} to="/dashboard/products">
                     Product
                   </MenuItem>
                   <MenuItem onClick={handleClose} component={RouterLink} to="/dashboard/user">
                     User
                   </MenuItem>
                   <Divider />
-                  <MenuItem onClick={handleClose}>KAYIT OL</MenuItem>
-                  <MenuItem onClick={handleClose}>GİRİŞ YAP</MenuItem>
+                  <MenuItem onClick={handleClose} component={RouterLink} to="/register">
+                    KAYIT OL
+                  </MenuItem>
+                  <MenuItem onClick={handleClose} component={RouterLink} to="/login">
+                    GİRİŞ YAP
+                  </MenuItem>
                 </Menu>
               </MHidden>
               <MHidden width="mdDown">
                 <Box>
                   <Box component={RouterLink} to="/dashboard" sx={{ display: 'inline-flex', textDecoration: 'none' }}>
-                    <Button size="large" sx={{ color: 'white' }} fullWidth variant="contained">
+                    <Button size="large" sx={{ color: 'white', fontSize: 22 }} fullWidth variant="contained">
                       App
                     </Button>
                   </Box>
                   <Box component={RouterLink} to="/dashboard/blog" sx={{ display: 'inline-flex', textDecoration: 'none' }}>
-                    <Button size="large" sx={{ color: 'white' }} fullWidth variant="contained">
+                    <Button size="large" sx={{ color: 'white', fontSize: 22 }} fullWidth variant="contained">
                       Blog
                     </Button>
                   </Box>
-                  <Box component={RouterLink} to="/dashboard/product" sx={{ display: 'inline-flex', textDecoration: 'none' }}>
-                    <Button size="large" sx={{ color: 'white' }} fullWidth variant="contained">
+                  <Box component={RouterLink} to="/dashboard/products" sx={{ display: 'inline-flex', textDecoration: 'none' }}>
+                    <Button size="large" sx={{ color: 'white', fontSize: 22 }} fullWidth variant="contained">
                       Product
                     </Button>
                   </Box>
                   <Box component={RouterLink} to="/dashboard/user" sx={{ display: 'inline-flex', textDecoration: 'none' }}>
-                    <Button size="large" sx={{ color: 'white' }} fullWidth variant="contained">
+                    <Button size="large" sx={{ color: 'white', fontSize: 22 }} fullWidth variant="contained">
                       User
                     </Button>
                   </Box>
@@ -137,7 +138,7 @@ export default function HomeLayout(props) {
                       KAYIT OL
                     </Button>
                   </Box>
-                  <Box component={RouterLink} to="/register" sx={{ display: 'inline-flex', textDecoration: 'none', ml: 2 }}>
+                  <Box component={RouterLink} to="/login" sx={{ display: 'inline-flex', textDecoration: 'none', ml: 2 }}>
                     <Button
                       size="large"
                       sx={{ backgroundColor: '', color: 'white' }}
@@ -155,33 +156,6 @@ export default function HomeLayout(props) {
         </AppBar>
       </HideOnScroll>
       <Toolbar />
-      <Container>
-        <Box sx={{ my: 2 }}>
-          {[...new Array(12)]
-            .map(
-              () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-            )
-            .join('\n')}
-        </Box>
-      </Container>
     </>
   );
 }

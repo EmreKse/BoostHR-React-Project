@@ -50,7 +50,7 @@ export default function Register() {
 
       <MHidden width="mdDown">
         <SectionStyle sx={{ backgroundColor: '#CFD8DC' }}>
-          <Typography variant="h4" sx={{ px: 5, mt: 0, mb: 5, color: '#1B5E20' }}>
+          <Typography variant="h4" sx={{ px: 5, mt: 0, mb: 5, color: '#0D47A1' }}>
             Şirketinizi daha kolay yönetin. Hem de tek bir yazılımla!
           </Typography>
           <SectionStyle sx={{ margin: 1, maxWidth: 448 }}>

@@ -6,8 +6,6 @@ import { styled } from '@mui/material/styles';
 import { Button, Box, Link, Drawer, Typography, Avatar } from '@mui/material';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 // components
-// import homeFill from '@iconify/icons-eva/home-fill';
-// import Logo from '../../components/Logo';
 import Scrollbar from '../../components/Scrollbar';
 import NavSection from '../../components/NavSection';
 import { MHidden } from '../../components/@material-extend';
