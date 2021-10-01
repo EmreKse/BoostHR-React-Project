@@ -83,6 +83,9 @@ export default function HomeLayout(props) {
                   <MenuItem onClick={handleClose} component={RouterLink} to="/dashboard">
                     App
                   </MenuItem>
+                  <MenuItem onClick={handleClose} component={RouterLink} to="/webAdmin">
+                    Web Admin
+                  </MenuItem>
                   <MenuItem onClick={handleClose} component={RouterLink} to="/dashboard/blog">
                     Blog
                   </MenuItem>
@@ -106,6 +109,11 @@ export default function HomeLayout(props) {
                   <Box component={RouterLink} to="/dashboard" sx={{ display: 'inline-flex', textDecoration: 'none' }}>
                     <Button size="large" sx={{ color: 'white', fontSize: 22 }} fullWidth variant="contained">
                       App
+                    </Button>
+                  </Box>
+                  <Box component={RouterLink} to="/webAdmin" sx={{ display: 'inline-flex', textDecoration: 'none' }}>
+                    <Button size="large" sx={{ color: 'white', fontSize: 22 }} fullWidth variant="contained">
+                      Web Admin
                     </Button>
                   </Box>
                   <Box component={RouterLink} to="/dashboard/blog" sx={{ display: 'inline-flex', textDecoration: 'none' }}>

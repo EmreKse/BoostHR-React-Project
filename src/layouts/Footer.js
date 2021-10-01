@@ -1,12 +1,6 @@
 import { Container, Grid, Link, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import { styled } from '@mui/system';
 import React from 'react';
-
-const Box2 = styled('div')(({ theme }) => ({
-  py: 1,
-  color: theme.palette.success.main
-}));
 
 export default function Footer() {
   return (
@@ -57,21 +51,16 @@ export default function Footer() {
             </Grid>
             <Grid item xs={12} sm={4}>
               <Box borderBottom={1}>
-                <Typography>Messages</Typography>
+                <Typography>Utility</Typography>
               </Box>
               <Box>
                 <Link href="/" color="inherit">
-                  Backup
+                  User Agreement
                 </Link>
               </Box>
               <Box>
                 <Link href="/" color="inherit">
-                  History
-                </Link>
-              </Box>
-              <Box>
-                <Link href="/" color="inherit">
-                  Roll
+                  Privacy Policy
                 </Link>
               </Box>
             </Grid>
