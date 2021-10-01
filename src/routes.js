@@ -15,6 +15,9 @@ import User from './pages/User';
 import NotFound from './pages/Page404';
 import Home from './pages/Home';
 import Main from './pages/webAdmin/Main';
+import Companies from './pages/webAdmin/Companies';
+import Reports from './pages/webAdmin/Reports';
+import Calendar from './pages/webAdmin/Calendar';
 
 // ----------------------------------------------------------------------
 
@@ -46,9 +49,9 @@ export default function Router() {
       children: [
         { element: <Navigate to="/webadmin/main" replace /> },
         { path: 'main', element: <Main /> },
-        { path: 'user', element: <User /> },
-        { path: 'products', element: <Products /> },
-        { path: 'blog', element: <Blog /> }
+        { path: 'companies', element: <Companies /> },
+        { path: 'reports', element: <Reports /> },
+        { path: 'calendar', element: <Calendar /> }
       ]
     },
     {
