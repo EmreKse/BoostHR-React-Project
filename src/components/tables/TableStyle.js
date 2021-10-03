@@ -21,25 +21,25 @@ export const useStyles = makeStyles(
         '& .super-app-theme--header': {
           backgroundColor: getBackgroundColor(theme.palette.primary.dark)
         },
-        '& .super-app-theme--Open': {
-          backgroundColor: getBackgroundColor(theme.palette.info.main),
+        '& .super-app-theme--trueeee': {
+          backgroundColor: getBackgroundColor(theme.palette.info.light),
           '&:hover': {
             backgroundColor: getHoverBackgroundColor(theme.palette.info.main)
           }
         },
-        '& .super-app-theme--Filled': {
+        '& .super-app-theme--true': {
           backgroundColor: getBackgroundColor(theme.palette.success.main),
           '&:hover': {
             backgroundColor: getHoverBackgroundColor(theme.palette.success.main)
           }
         },
-        '& .super-app-theme--PartiallyFilled': {
-          backgroundColor: getBackgroundColor(theme.palette.warning.main),
+        '& .super-app-theme--falseee': {
+          backgroundColor: getBackgroundColor(theme.palette.warning.light),
           '&:hover': {
             backgroundColor: getHoverBackgroundColor(theme.palette.warning.main)
           }
         },
-        '& .super-app-theme--Rejected': {
+        '& .super-app-theme--false': {
           backgroundColor: getBackgroundColor(theme.palette.error.main),
           '&:hover': {
             backgroundColor: getHoverBackgroundColor(theme.palette.error.main)

@@ -1,6 +1,8 @@
 import * as React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { DataGrid } from '@mui/x-data-grid';
 import { useDemoData } from '@mui/x-data-grid-generator';
+import Button from '@mui/material/Button';
 import renderCellExpand from './CellRenderer';
 import { useStyles } from './TableStyle';
 
@@ -23,16 +25,37 @@ const columns = [
     type: 'date'
   },
   {
-    field: 'status',
+    field: 'isAdmin',
     headerName: 'Üyelik Aktifliği',
-    width: 180
+    width: 180,
+    type: 'boolean'
+  },
+  {
+    field: 'id',
+    headerName: 'Event',
+    width: 180,
+    renderCell: (params) => (
+      <strong>
+        <Button
+          component={RouterLink}
+          to={`/companies/${params.value}`}
+          variant="contained"
+          color="primary"
+          size="small"
+          style={{ marginLeft: 16 }}
+        >
+          Şirkete Git
+        </Button>
+      </strong>
+    )
   }
 ];
 
 export default function CompanyTable() {
   const classes = useStyles();
+  const [pageSize, setPageSize] = React.useState(10);
   const { data } = useDemoData({
-    dataSet: 'Commodity',
+    dataSet: 'Company',
     rowLength: 40
   });
 
@@ -41,10 +64,14 @@ export default function CompanyTable() {
       <div style={{ display: 'flex', height: '100%' }}>
         <div style={{ flexGrow: 1 }} className={classes.root}>
           <DataGrid
+            pageSize={pageSize}
+            onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+            rowsPerPageOptions={[10, 25, 50]}
+            pagination
             autoHeight
             rows={data.rows}
             columns={columns}
-            getRowClassName={(params) => `super-app-theme--${params.getValue(params.id, 'status')}`}
+            getRowClassName={(params) => `super-app-theme--${params.getValue(params.id, 'isAdmin')}`}
           />
         </div>
       </div>
